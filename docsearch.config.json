@@ -1,18 +1,16 @@
 {
   "index_name": "strapi-doc",
   "start_urls": [
-    {
-      "url": "https://strapi.io/documentation"
-    }
+    "https://strapi.io/documentation"
   ],
   "stop_urls": [],
   "selectors": {
-    "lvl0": ".section h1",
-    "lvl1": ".section h2",
-    "lvl2": ".section h3",
-    "lvl3": ".section h4",
-    "lvl4": ".section h5",
-    "lvl5": ".section h6",
-    "text": ".section p, .section li, .section .code"
+    "lvl0": "h1",
+    "lvl1": "h2",
+    "lvl2": "h3",
+    "lvl3": "h4",
+    "lvl4": "h5",
+    "lvl5": "h6",
+    "text": "p"
   }
 }
