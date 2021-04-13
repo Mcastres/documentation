@@ -2,7 +2,7 @@
   "index_name": "strapi-doc",
   "start_urls": [
     {
-      "url": "https://strapi.io/documentation",
+      "url": "https://strapi.io/documentation"
     }
   ],
   "stop_urls": [],
