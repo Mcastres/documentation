@@ -1,0 +1,21 @@
+name: Update Algolia Index
+on:
+  # Allow manual triggers.
+  workflow_dispatch: {}
+  # Run once a day.
+  schedule:
+  - cron: "0 0 * * *"
+jobs:
+  update-algolia-index:
+    runs-on: ubuntu-latest
+    steps:
+    - name: checkout
+      uses: actions/checkout@v2
+    - name: update
+      run: |
+        # Based on https://docsearch.algolia.com/docs/run-your-own/
+        docker run \
+          -e "APPLICATION_ID=${{ secrets.APPLICATION_ID }}" \
+          -e "API_KEY=${{ secrets.API_KEY }}" \
+          -e "CONFIG=$(cat ./docsearch.config.json | jq -r tostring)" \
+          algolia/docsearch-scraper:v1.13.0
